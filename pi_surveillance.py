@@ -9,6 +9,7 @@ import imutils
 import json
 import time
 import cv2
+import os
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
@@ -27,6 +28,11 @@ camera = PiCamera()
 camera.resolution = tuple(conf["resolution"])
 camera.framerate = conf["fps"]
 rawCapture = PiRGBArray(camera, size=tuple(conf["resolution"]))
+
+imageDir = conf["image_dir"]
+#make the directory to store the images
+if not os.path.exists(imageDir):
+    os.makedirs(imageDir)
 
 # allow the camera to warmup, then initialize the average frame, last
 # uploaded timestamp, and frame motion counter
@@ -99,10 +105,9 @@ for f in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True
             # check to see if the number of frames with consistent motion is
             # high enough
             if motionCounter >= conf["min_motion_frames"]:
-                # write the image to temporary file
-                t = TempImage()
-                cv2.imwrite(t.path, frame)
-                #t.cleanup()
+                filename = timestamp.strftime("%Y-%m-%dT%H%M%S")
+                filepath = os.path.join(imageDir, filename)
+                cv2.imwrite("{name}.jpg".format(name=filepath), frame)
 
                 # update the last uploaded timestamp and reset the motion
                 # counter

@@ -1,10 +1,11 @@
 {
     "show_video": true,
+    "image_dir": "./images",
     "min_upload_seconds": 3.0,
-    "min_motion_frames": 8,
+    "min_motion_frames": 6,
     "camera_warmup_time": 2.5,
     "delta_thresh": 5,
     "resolution": [640, 480],
     "fps": 16,
-    "min_area": 5000
+    "min_area": 1000
 }
