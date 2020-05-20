@@ -16,16 +16,20 @@ The project was based on [a couple of blog posts by Adrian Rosebrock](https://ww
 
 # Prerequisites
 
-* A Raspberry Pi (3 Model B+ or above is recommended)
+* A Raspberry Pi (3 Model B+ or above is recommended, perhaps a [Raspberry Pi 4 B](https://shop.pimoroni.com/products/raspberry-pi-4?variant=29157087412307))
+* A nice big Micro SD Card [from Amazon?](https://www.amazon.co.uk/SanDisk-Extreme-microSDXC-Adapter-Performance/dp/B07FCMBLV6/ref=asc_df_B07FCMBLV6/)
 * A camera (i.e. an infra-red wide-angle lense camera with built-in infra-red LEDs from [Pimoroni](https://shop.pimoroni.com/products/night-vision-camera-module-for-raspberry-pi?variant=12516582752339))
-* Raspbian "Buster"
-* Python 3
-* OpenCV
+* Raspbian "Buster" (available from the [raspberrypi.org website](https://www.raspberrypi.org/downloads/))
+* Python 3 (included with "Buster")
+* OpenCV (see below...)
+
+![Cat tracker in situ](./docs/cattracker-in-situ.jpg)
+
 
 I got the following instructions from [this blog post](https://www.pyimagesearch.com/2019/09/16/install-opencv-4-on-raspberry-pi-4-and-raspbian-buster/) to set up OpenCV:
 
 1. Get a Raspberry Pi 3 B+ or 4 B.
-2. Ensure it is running Raspbian "Buster".  (see the above post of Google for how to do this).
+2. Ensure it is running Raspbian "Buster".  (see the above link in the prerequisites, the above blog post or Google for how to do this).
 3. Ensure you have "Expanded the filesystem".  Do this by running the `raspi-config` tool using `sudo` and choosing Advanced Options -> Expand Filesystem.
 4. Also ensure that the camera is enabled using `raspi-config` by going into the Interfacing Options section.
 5. Reboot your Pi (`sudo reboot`)
