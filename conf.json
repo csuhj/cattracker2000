@@ -1,7 +1,11 @@
 {
     "show_video": true,
     "image_dir": "./images",
-    "min_upload_seconds": 3.0,
+    "video_dir": "./videos",
+    "save_image": true,
+    "save_video": true,
+    "min_gap_between_images_in_seconds": 3.0,
+    "video_length_in_seconds": 10.0,
     "min_motion_frames": 6,
     "camera_warmup_time": 2.5,
     "delta_thresh": 5,
