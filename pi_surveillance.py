@@ -46,7 +46,7 @@ avg = None
 lastSavedImage = datetime.datetime.now()
 motionCounter = 0
 
-fourcc = cv2.VideoWriter_fourcc(*"H264")
+fourcc = cv2.VideoWriter_fourcc(*"avc1")
 videoOut = None
 videoFramesToWrite = 0;
 
@@ -126,7 +126,7 @@ for f in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True
                 if conf["save_video"] and videoOut is None:
                     filepath = os.path.join(videoDir, filename)
                     (height, width) = frame.shape[:2]
-                    videoOut = cv2.VideoWriter("{name}.avi".format(name=filepath),
+                    videoOut = cv2.VideoWriter("{name}.mp4".format(name=filepath),
                                                fourcc,
                                                conf["fps"],
                                                (width, height),
